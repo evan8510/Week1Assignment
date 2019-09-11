@@ -18,7 +18,7 @@ public class PizzaCost {
         total = topp + dmtr + base;
         System.out.format("Your pizza will cost $%.2f", total);
         System.out.println("Full now");
-        
+        System.out.println("This was done at hoem");
     }
     
 }
