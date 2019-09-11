@@ -13,12 +13,17 @@ public class PBar {
         val = v;
     }
     void draw(Pen p){
-        p.move(-275, yLoc);
+        p.move(-250, yLoc);
         p.setWidth(50);
         p.setColor(col);
         p.down();
         p.setDirection(0);
         p.move(val);
         p.up();
+    }
+    void drawString(Pen p){
+        p.move((val-210),(yLoc + 10));
+        p.setColor(Color.BLACK);
+        p.drawString("Value: " + val);
     }
 }

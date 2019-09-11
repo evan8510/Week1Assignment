@@ -19,19 +19,25 @@ public class BarChart3 {
         f[2] = Color.GREEN;
         f[3] = Color.BLUE;
         f[4] = Color.YELLOW;
-        // draw window and stuff
-        Pen p = new StandardPen(new SketchPadWindow(640,480));
-        p.up();
+        int x;
+       
         for(int i = 1; i<5; i++){
-            System.out.print("Enter a value for bar " + i + " less than 500. ");
-            int x = s.nextInt();
-            while(x>499){
-                System.out.print("Less than 500. ");
+            System.out.print("Enter a value for bar " + i + " 50 to 500. ");
+            x = s.nextInt();
+            while(x>500 || x<50){
+                System.out.print("Error ");
                 x= s.nextInt();
             }
             b[i] = new PBar(j, x, f[i]);
-            b[i].draw(p);
             j -=100;
+        }
+         // draw window and stuff
+        Pen p = new StandardPen(new SketchPadWindow(640,480));
+         p.up();
+        for (int i = 1; i < 5; i++) {
+            b[i].draw(p);
+            b[i].drawString(p);
+
         }
     }
     
